@@ -12,8 +12,8 @@ Team members:
 - Leen Alzamel
 
 Features implemented in this prototype:
-1- User registraition:
+1 - User registraition:
   Allows students to create an account using email, password, and basic profile details.
-2- User login:
+2 - User login:
   Validates user credentials and redirects the student to their dashboard.
-3- Additional feature:
+3 - Additional feature:
