@@ -1,16 +1,19 @@
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
   public static void main(String[] args) {
 
   AuthService auth = new AuthService();
+  SearchService searchService = new SearchService();
   Scanner scanner = new Scanner(System.in);
 
   while (true) {
     System.out.println("\n--- PMU Mentor System ---");
     System.out.println("1. Register");
     System.out.println("2. Login");
-    System.out.println("3. Exit");
+    System.out.println("3. Search Resources");
+    System.out.println("4. Exit");
 
     int choice = scanner.nextInt();
     scanner.nextLine();
@@ -40,7 +43,22 @@ public class Main {
       } else {
         System.out.println("Invalid username or password");
       }
-    else if (choice == 3) {
+                } else if (choice == 3) {
+                System.out.print("Enter keyword to search: ");
+                String keyword = scanner.nextLine();
+
+                List<String> results = searchService.search(keyword);
+
+                if (results.isEmpty()) {
+                    System.out.println("No results found.");
+                } else {
+                    System.out.println("Search Results:");
+                    for (String r : results) {
+                        System.out.println("- " + r);
+                    }
+                }
+    
+    else if (choice == 4) {
       System.out.println("Goodbye");
       break;
     }
